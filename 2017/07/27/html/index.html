@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="标签," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML 基本文档&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;文档标题&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 可见文本…&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 基本标签（Basic Tags）&amp;lt;h1&amp;gt;最大的标题&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;g">
+<meta name="keywords" content="标签">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html标签总结">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/html/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTML 基本文档&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;文档标题&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 可见文本…&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 基本标签（Basic Tags）&amp;lt;h1&amp;gt;最大的标题&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-28T03:21:54.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html标签总结">
+<meta name="twitter:description" content="HTML 基本文档&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;文档标题&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 可见文本…&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 基本标签（Basic Tags）&amp;lt;h1&amp;gt;最大的标题&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;g">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/27/html/"/>
+
+
+
+
+
+  <title> html标签总结 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TinyMark">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                html标签总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T16:12:58+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML-基本文档"><a href="#HTML-基本文档" class="headerlink" title="HTML 基本文档"></a>HTML 基本文档</h1><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;文档标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+</code></pre><h1 id="可见文本…"><a href="#可见文本…" class="headerlink" title="可见文本…"></a>可见文本…</h1><pre><code>&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h1 id="基本标签（Basic-Tags）"><a href="#基本标签（Basic-Tags）" class="headerlink" title="基本标签（Basic Tags）"></a>基本标签（Basic Tags）</h1><pre><code>&lt;h1&gt;最大的标题&lt;/h1&gt;
+&lt;h2&gt; . . . &lt;/h2&gt;
+&lt;h3&gt; . . . &lt;/h3&gt;
+&lt;h4&gt; . . . &lt;/h4&gt;
+&lt;h5&gt; . . . &lt;/h5&gt;
+&lt;h6&gt;最小的标题&lt;/h6&gt;
+
+&lt;p&gt;这是一个段落。&lt;/p&gt;
+&lt;br&gt; （换行）
+&lt;hr&gt; （水平线）
+&lt;!-- 这是注释 --&gt;
+</code></pre><h1 id="文本格式化（Formatting）"><a href="#文本格式化（Formatting）" class="headerlink" title="文本格式化（Formatting）"></a>文本格式化（Formatting）</h1><pre><code>&lt;b&gt;粗体文本&lt;/b&gt;
+&lt;code&gt;计算机代码&lt;/code&gt;
+&lt;em&gt;强调文本&lt;/em&gt;
+&lt;i&gt;斜体文本&lt;/i&gt;
+&lt;kbd&gt;键盘输入&lt;/kbd&gt; 
+&lt;pre&gt;预格式化文本&lt;/pre&gt;
+&lt;small&gt;更小的文本&lt;/small&gt;
+&lt;strong&gt;重要的文本&lt;/strong&gt;
+
+&lt;abbr&gt; （缩写）
+&lt;address&gt; （联系信息）
+&lt;bdo&gt; （文字方向）
+&lt;blockquote&gt; （从另一个源引用的部分）
+&lt;cite&gt; （工作的名称）
+&lt;del&gt; （删除的文本）
+&lt;ins&gt; （插入的文本）
+&lt;sub&gt; （下标文本）
+&lt;sup&gt; （上标文本）
+</code></pre><h1 id="链接（Links）"><a href="#链接（Links）" class="headerlink" title="链接（Links）"></a>链接（Links）</h1><pre><code>普通的链接：&lt;a href=&quot;http://www.example.com/&quot;&gt;链接文本&lt;/a&gt;
+图像链接： &lt;a href=&quot;http://www.example.com/&quot;&gt;&lt;img src=&quot;URL&quot; alt=&quot;替换文本&quot;&gt;&lt;/a&gt;
+邮件链接： &lt;a href=&quot;mailto:webmaster@example.com&quot;&gt;发    送e-mail&lt;/a&gt;
+书签：
+&lt;a id=&quot;tips&quot;&gt;提示部分&lt;/a&gt;
+&lt;a href=&quot;#tips&quot;&gt;跳到提示部分&lt;/a&gt;
+</code></pre><h1 id="图片（Images）"><a href="#图片（Images）" class="headerlink" title="图片（Images）"></a>图片（Images）</h1><pre><code>&lt;img src=&quot;URL&quot; alt=&quot;替换文本&quot; height=&quot;42&quot; width=&quot;42&quot;&gt;
+</code></pre><h1 id="样式-区块（Styles-Sections）"><a href="#样式-区块（Styles-Sections）" class="headerlink" title="样式/区块（Styles/Sections）"></a>样式/区块（Styles/Sections）</h1><pre><code>&lt;style type=&quot;text/css&quot;&gt;
+h1 {color:red;}
+p {color:blue;}
+&lt;/style&gt;
+&lt;div&gt;文档中的块级元素&lt;/div&gt;
+&lt;span&gt;文档中的内联元素&lt;/span&gt;
+</code></pre><h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><pre><code>&lt;ul&gt;
+    &lt;li&gt;项目&lt;/li&gt;
+    &lt;li&gt;项目&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><pre><code>&lt;ol&gt;
+    &lt;li&gt;第一项&lt;/li&gt;
+    &lt;li&gt;第二项&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><h1 id="定义列表"><a href="#定义列表" class="headerlink" title="定义列表"></a>定义列表</h1><pre><code>&lt;dl&gt;
+  &lt;dt&gt;项目 1&lt;/dt&gt;
+    &lt;dd&gt;描述项目 1&lt;/dd&gt;
+  &lt;dt&gt;项目 2&lt;/dt&gt;
+    &lt;dd&gt;描述项目 2&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre><h1 id="表格（Tables）"><a href="#表格（Tables）" class="headerlink" title="表格（Tables）"></a>表格（Tables）</h1><pre><code>&lt;table border=&quot;1&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;表格标题&lt;/th&gt;
+    &lt;th&gt;表格标题&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;表格数据&lt;/td&gt;
+    &lt;td&gt;表格数据&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre><h1 id="框架（Iframe）"><a href="#框架（Iframe）" class="headerlink" title="框架（Iframe）"></a>框架（Iframe）</h1><pre><code>&lt;iframe src=&quot;demo_iframe.htm&quot;&gt;&lt;/iframe&gt;
+</code></pre><h1 id="表单（Forms）"><a href="#表单（Forms）" class="headerlink" title="表单（Forms）"></a>表单（Forms）</h1><pre><code>&lt;form action=&quot;demo_form.php&quot; method=&quot;post/get&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;email&quot; size=&quot;40&quot; maxlength=&quot;50&quot;&gt;
+&lt;input type=&quot;password&quot;&gt;
+&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;
+&lt;input type=&quot;radio&quot; checked=&quot;checked&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
+&lt;input type=&quot;reset&quot;&gt;
+&lt;input type=&quot;hidden&quot;&gt;
+&lt;select&gt;
+&lt;option&gt;苹果&lt;/option&gt;
+&lt;option selected=&quot;selected&quot;&gt;香蕉&lt;/option&gt;
+&lt;option&gt;樱桃&lt;/option&gt;
+&lt;/select&gt;
+&lt;textarea name=&quot;comment&quot; rows=&quot;60&quot; cols=&quot;20&quot;&gt;&lt;/textarea&gt;
+
+&lt;/form&gt;
+</code></pre><h1 id="实体（Entities）"><a href="#实体（Entities）" class="headerlink" title="实体（Entities）"></a>实体（Entities）</h1><pre><code>&amp;lt; 等同于 &lt;
+&amp;gt; 等同于 &gt;
+&amp;nbsp; 等同于空格
+&amp;amp; 等同于&amp;
+&amp;#169; 等同于 ©
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/标签/" rel="tag"># 标签</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/27/flex布局总结/" rel="next" title="flex布局总结">
+                <i class="fa fa-chevron-left"></i> flex布局总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/27/基础总结/" rel="prev" title="html基础总结">
+                html基础总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/2.jpg"
+               alt="TinyMark" />
+          <p class="site-author-name" itemprop="name">TinyMark</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-基本文档"><span class="nav-number">1.</span> <span class="nav-text">HTML 基本文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可见文本…"><span class="nav-number">2.</span> <span class="nav-text">可见文本…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本标签（Basic-Tags）"><span class="nav-number">3.</span> <span class="nav-text">基本标签（Basic Tags）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本格式化（Formatting）"><span class="nav-number">4.</span> <span class="nav-text">文本格式化（Formatting）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接（Links）"><span class="nav-number">5.</span> <span class="nav-text">链接（Links）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片（Images）"><span class="nav-number">6.</span> <span class="nav-text">图片（Images）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样式-区块（Styles-Sections）"><span class="nav-number">7.</span> <span class="nav-text">样式/区块（Styles/Sections）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无序列表"><span class="nav-number">8.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有序列表"><span class="nav-number">9.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义列表"><span class="nav-number">10.</span> <span class="nav-text">定义列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表格（Tables）"><span class="nav-number">11.</span> <span class="nav-text">表格（Tables）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架（Iframe）"><span class="nav-number">12.</span> <span class="nav-text">框架（Iframe）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表单（Forms）"><span class="nav-number">13.</span> <span class="nav-text">表单（Forms）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实体（Entities）"><span class="nav-number">14.</span> <span class="nav-text">实体（Entities）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TinyMark</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

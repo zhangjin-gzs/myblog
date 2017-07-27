@@ -1,0 +1,819 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="内置方法," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="String、Array对象内置方法常用　*str.charAt( index )// 返回str中索引为 参数index 的字符 //（如果index不在0-str.length范围中，返回空） str.charCodeAt( index )// 返回str中索引为 index 的 Unicode编码 //（如果index不在0 ~ str.length范围中，返回NaN） *str.conca">
+<meta name="keywords" content="内置方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String、Array对象内置方法">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/内置方法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="String、Array对象内置方法常用　*str.charAt( index )// 返回str中索引为 参数index 的字符 //（如果index不在0-str.length范围中，返回空） str.charCodeAt( index )// 返回str中索引为 index 的 Unicode编码 //（如果index不在0 ~ str.length范围中，返回NaN） *str.conca">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-28T03:21:43.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="String、Array对象内置方法">
+<meta name="twitter:description" content="String、Array对象内置方法常用　*str.charAt( index )// 返回str中索引为 参数index 的字符 //（如果index不在0-str.length范围中，返回空） str.charCodeAt( index )// 返回str中索引为 index 的 Unicode编码 //（如果index不在0 ~ str.length范围中，返回NaN） *str.conca">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/27/内置方法/"/>
+
+
+
+
+
+  <title> String、Array对象内置方法 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/内置方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TinyMark">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                String、Array对象内置方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T16:12:58+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="String、Array对象内置方法"><a href="#String、Array对象内置方法" class="headerlink" title="String、Array对象内置方法"></a>String、Array对象内置方法</h1><h2 id="常用"><a href="#常用" class="headerlink" title="常用　"></a>常用　</h2><h3 id="str-charAt-index"><a href="#str-charAt-index" class="headerlink" title="*str.charAt( index )"></a>*str.charAt( index )</h3><pre><code>// 返回str中索引为 参数index 的字符
+//（如果index不在0-str.length范围中，返回空）
+</code></pre><h3 id="str-charCodeAt-index"><a href="#str-charCodeAt-index" class="headerlink" title="str.charCodeAt( index )"></a>str.charCodeAt( index )</h3><pre><code>// 返回str中索引为 index 的 Unicode编码
+//（如果index不在0 ~ str.length范围中，返回NaN）
+</code></pre><h3 id="str-concat-arg1，arg2…"><a href="#str-concat-arg1，arg2…" class="headerlink" title="*str.concat( arg1，arg2… )"></a>*str.concat( arg1，arg2… )</h3><pre><code>// 连接两个或多个字符串，返回一个新的字符串
+// 如果参数为数组，则会连接其中的每一项
+// 建议使用&quot;+&quot;号来进行连接
+//（不会修改原字符串）
+</code></pre><h3 id="str-indexOf-value，fromindex"><a href="#str-indexOf-value，fromindex" class="headerlink" title="*str.indexOf( value，fromindex )"></a>*str.indexOf( value，fromindex )</h3><pre><code>// 从头开始检索字符串
+// 返回某个指定的 value 在字符串中首次出现的位置
+// fromindex 可选，设定检索开始索引，范围0 ~ str.length，不写会从0开始检索
+// （！注意区分大小写！）
+</code></pre><h3 id="str-lastIndexOf-value，fromindex"><a href="#str-lastIndexOf-value，fromindex" class="headerlink" title="str.lastIndexOf( value，fromindex )"></a>str.lastIndexOf( value，fromindex )</h3><pre><code>// 从末尾开始检索字符串
+// 返回某个指定的 value 在字符串中首次出现的位置
+// fromindex可选，设定检索开始索引，范围0 ~ str.length，不写会从最末开始检索
+// （！注意区分大小写！）
+</code></pre><h3 id="str-match-regexp-g"><a href="#str-match-regexp-g" class="headerlink" title="str.match( /regexp/g )"></a>str.match( /regexp/g )</h3><pre><code>// 返回一个新数组，其中的每一项都是str符合/regexp/正则匹配的元素
+// （！注意在正则表达式之后加&apos;g&apos;代表全局匹配！）
+// （如果不加&apos;g&apos;，返回的新数组第一项是从头检索str中第一个符合/regexp/正则匹配的元素，第二项是index，第三项是input）
+</code></pre><h3 id="str-replace-tarstr，replacestr"><a href="#str-replace-tarstr，replacestr" class="headerlink" title="*str.replace( tarstr，replacestr )"></a>*str.replace( tarstr，replacestr )</h3><pre><code>// 返回一个新字符串，用 replacestr 替换 tararg
+// 如果使用正则匹配，g代表全局匹配
+</code></pre><h3 id="str-search-tarstr"><a href="#str-search-tarstr" class="headerlink" title="*str.search( tarstr )"></a>*str.search( tarstr )</h3><pre><code>// 返回 tarstr 在 str 中首次出现的位置（index）
+// 如果使用正则匹配，g代表全局匹配，i代表忽略大小写
+</code></pre><h3 id="str-slice-start，end"><a href="#str-slice-start，end" class="headerlink" title="*str.slice( start，end )"></a>*str.slice( start，end )</h3><pre><code>// 截取str的片段，返回一个新字符串
+// 从 start 开始（包括start），到end结束（不包括end）
+// 如果参数为负数，会从 str 的末位开始索引
+</code></pre><h3 id="str-split-arg，howmany"><a href="#str-split-arg，howmany" class="headerlink" title="*str.split( arg，howmany )"></a>*str.split( arg，howmany )</h3><pre><code>// 返回一个数组，其中每一项是 str 按照 arg 分割出来的字符串
+// howmany可选，为返回数组的length
+// 可以使用正则匹配
+</code></pre><h3 id="str-trim"><a href="#str-trim" class="headerlink" title="*str.trim()"></a>*str.trim()</h3><pre><code>// 返回一个新字符串，内容为str两端去空格
+</code></pre><h3 id="str-to-Local-LowerCase"><a href="#str-to-Local-LowerCase" class="headerlink" title="*str.to(Local)LowerCase()"></a>*str.to(Local)LowerCase()</h3><pre><code>// 返回一个新字符串，内容为转化成(本地)小写的str
+</code></pre><h3 id="str-to-Local-UpperCase"><a href="#str-to-Local-UpperCase" class="headerlink" title="*str.to(Local)UpperCase()"></a>*str.to(Local)UpperCase()</h3><pre><code>// 返回一个新字符串，内容为转化成(本地)大写的str
+</code></pre><h2 id="不常用"><a href="#不常用" class="headerlink" title="不常用"></a>不常用</h2><h3 id="str-anchor-arg"><a href="#str-anchor-arg" class="headerlink" title="str.anchor( arg )"></a>str.anchor( arg )</h3><pre><code>// 返回一个 &lt;a&gt; 标签包裹str
+// 参数 arg 为该 &lt;a&gt;标签的 name属性值
+</code></pre><h3 id="str-link-arg"><a href="#str-link-arg" class="headerlink" title="str.link( arg )"></a>str.link( arg )</h3><pre><code>// 返回一个 &lt;a&gt; 标签包裹str
+// 参数arg为该 &lt;a&gt;标签的 href属性值
+</code></pre><h3 id="str-big"><a href="#str-big" class="headerlink" title="str.big()"></a>str.big()</h3><pre><code>// 返回一个 &lt;big&gt; 标签包裹str
+//（&lt;big&gt;标签 显示为大号（一号）字体）
+</code></pre><h3 id="str-blink"><a href="#str-blink" class="headerlink" title="str.blink()"></a>str.blink()</h3><pre><code>// 返回一个 &lt;blink&gt; 标签包裹str
+//（&lt;blink&gt;标签 显示闪动）
+</code></pre><h3 id="str-bold"><a href="#str-bold" class="headerlink" title="str.bold()"></a>str.bold()</h3><pre><code>// 返回一个 &lt;b&gt; 标签包裹str
+//（&lt;b&gt;标签 显示为粗体）
+</code></pre><h3 id="str-fixed"><a href="#str-fixed" class="headerlink" title="str.fixed()"></a>str.fixed()</h3><pre><code>// 返回一个 &lt;tt&gt; 标签包裹str
+//（ &lt;tt&gt;标签 显示为打字机字体，其font-family 为 monospace）
+</code></pre><h3 id="str-fontcolor-color"><a href="#str-fontcolor-color" class="headerlink" title="str.fontcolor( color )"></a>str.fontcolor( color )</h3><pre><code>// 返回一个 &lt;font&gt; 标签包裹str
+// 参数 color 为该标签的 color属性值
+//（color参数是string，需要用&quot;&quot;包裹，可以是颜色名(red)、RGB 值(rgb(255,0,0))或者十六进制数(#FF0000)）
+</code></pre><h3 id="str-fontsize-size"><a href="#str-fontsize-size" class="headerlink" title="str.fontsize( size )"></a>str.fontsize( size )</h3><pre><code>// 返回一个 &lt;font&gt; 标签包裹str
+// 参数 size 为该标签的 size属性值
+//（size参数是number，范围为1-7（小-大））
+</code></pre><h3 id="str-italics"><a href="#str-italics" class="headerlink" title="str.italics()"></a>str.italics()</h3><pre><code>// 返回一个 &lt;i&gt; 标签包裹str
+</code></pre><h3 id="String-fromCharCode-num1-num2…"><a href="#String-fromCharCode-num1-num2…" class="headerlink" title="String.fromCharCode( num1,num2… )"></a>String.fromCharCode( num1,num2… )</h3><pre><code>// 返回一个由指定 Unicode值 生成的 字符串
+//（注意！该方法是 String 的静态方法，固定格式就是 String.fromCharCode( ... )!）
+</code></pre><h3 id="str-small"><a href="#str-small" class="headerlink" title="str.small()"></a>str.small()</h3><pre><code>// 返回一个 &lt;small&gt; 标签包裹str
+</code></pre><h3 id="str-strike"><a href="#str-strike" class="headerlink" title="str.strike()"></a>str.strike()</h3><pre><code>// 返回一个 &lt;strike&gt; 标签包裹str
+// （ &lt;strike&gt;标签 显示为删除线）
+</code></pre><h3 id="str-sub"><a href="#str-sub" class="headerlink" title="str.sub()"></a>str.sub()</h3><pre><code>// 返回一个 &lt;sub&gt; 标签包裹str
+// （ &lt;sub&gt;标签 显示为下标）
+</code></pre><h3 id="str-sup"><a href="#str-sup" class="headerlink" title="str.sup()"></a>str.sup()</h3><pre><code>// 返回一个 &lt;sup&gt; 标签包裹str
+// （ &lt;sub&gt;标签 显示为上标）
+</code></pre><h1 id="Array对象内置方法"><a href="#Array对象内置方法" class="headerlink" title="Array对象内置方法"></a>Array对象内置方法</h1><h2 id="常用-1"><a href="#常用-1" class="headerlink" title="常用"></a>常用</h2><h3 id="arr-unshift-ele1-ele2…"><a href="#arr-unshift-ele1-ele2…" class="headerlink" title="arr.unshift( ele1,ele2… )"></a>arr.unshift( ele1,ele2… )</h3><pre><code>返回值类型：number（arr.length）
+描述：向数组的 开头 添加一个或更多元素，并返回新的长度。
+是否改变原数组：是
+备注：参数1必须，注意返回值是新数组的长度
+</code></pre><h3 id="arr-push-ele1-ele2…"><a href="#arr-push-ele1-ele2…" class="headerlink" title="arr.push( ele1,ele2… )"></a>arr.push( ele1,ele2… )</h3><pre><code>返回值类型：number（arr.length）
+描述：向数组的 末尾 添加一个或更多元素，并返回新的长度。
+是否改变原数组：是
+备注：参数1必须，注意返回值是新数组的长度
+</code></pre><h3 id="arr-concat-arr1-arr2…"><a href="#arr-concat-arr1-arr2…" class="headerlink" title="arr.concat( arr1,arr2… )"></a>arr.concat( arr1,arr2… )</h3><pre><code>返回值类型：array
+描述：连接两个或更多的数组，返回新数组
+是否改变原数组：否
+备注：如果参数是数组，则会连接数组中的每一项
+</code></pre><h3 id="arr-join-…"><a href="#arr-join-…" class="headerlink" title="arr.join( … )"></a>arr.join( … )</h3><pre><code>返回值类型：string
+描述：把数组的所有元素按照指定的分隔符进行分隔后合并，返回一个新字符串
+是否改变原数组：否
+备注：如果不写参数，则默认逗号作为分隔符
+</code></pre><h3 id="arr-shift"><a href="#arr-shift" class="headerlink" title="arr.shift(  )"></a>arr.shift(  )</h3><pre><code>返回值类型：arr[ele]
+描述：删除数组的第一个元素，并返回删除项
+是否改变原数组：是
+备注：注意返回值是删除的元素
+</code></pre><h3 id="arr-pop"><a href="#arr-pop" class="headerlink" title="arr.pop(  )"></a>arr.pop(  )</h3><pre><code>返回值类型：arr[ele]
+描述：删除数组的最后一个元素，返回删除项
+是否改变原数组：是
+备注：注意返回值是删除的元素
+</code></pre><h3 id="arr-slice-start-end"><a href="#arr-slice-start-end" class="headerlink" title="arr.slice( start,end )"></a>arr.slice( start,end )</h3><pre><code>返回值类型：arr[ele]
+描述：从数组中截取一部分，返回选定的元素
+是否改变原数组：否
+备注：[s,e)；-1是最后一个；e为可选，如没有则到最后
+</code></pre><h3 id="arr-splice-index-howmany-ele…"><a href="#arr-splice-index-howmany-ele…" class="headerlink" title="arr.splice( index,howmany,ele… )"></a>arr.splice( index,howmany,ele… )</h3><pre><code>返回值类型：arr[ele]
+描述：插入、删除、替换元素，并向数组添加新元素，返回删除项
+是否改变原数组：是
+备注：index索引，howmany几个(可选，如不写则到最后)，ele替换元素(可选)
+</code></pre><h3 id="arr-sort"><a href="#arr-sort" class="headerlink" title="arr.sort(  )"></a>arr.sort(  )</h3><pre><code>返回值类型：array
+描述：对数组的元素进行排序，返回排序后的原数组
+是否改变原数组：是
+备注：默认规则number从小-大&gt;string首字母从大写-小写&gt;a-z排序
+</code></pre><h3 id="arr-reverse"><a href="#arr-reverse" class="headerlink" title="arr.reverse(  )"></a>arr.reverse(  )</h3><pre><code>返回值类型：array
+描述：颠倒数组中元素的顺序，返回颠倒的原数组
+是否改变原数组：是
+备注：注意会改变原数组
+</code></pre><h3 id="arr-toString"><a href="#arr-toString" class="headerlink" title="arr.toString( )"></a>arr.toString( )</h3><pre><code>返回值类型：string
+描述：把数组转换为字符串，并返回字符串
+是否改变原数组：否
+备注：返回值等同于arr.join( )不写参数
+</code></pre><h3 id="arr-indexOf-ele"><a href="#arr-indexOf-ele" class="headerlink" title="arr.indexOf( ele )"></a>arr.indexOf( ele )</h3><pre><code>返回值类型：number（arr[ele].index）
+描述：返回ele在数组中首次出现的索引，如果没有返回-1
+是否改变原数组：否
+备注：string方法，查找ele需要完全匹配，如果没有参数，会查找undefined
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/内置方法/" rel="tag"># 内置方法</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/27/作用域-闭包/" rel="next" title="作用域-闭包">
+                <i class="fa fa-chevron-left"></i> 作用域-闭包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/27/常用数组的检测方法/" rel="prev" title="常用数组的检测方法">
+                常用数组的检测方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/2.jpg"
+               alt="TinyMark" />
+          <p class="site-author-name" itemprop="name">TinyMark</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String、Array对象内置方法"><span class="nav-number">1.</span> <span class="nav-text">String、Array对象内置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用"><span class="nav-number">1.1.</span> <span class="nav-text">常用　</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#str-charAt-index"><span class="nav-number">1.1.1.</span> <span class="nav-text">*str.charAt( index )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-charCodeAt-index"><span class="nav-number">1.1.2.</span> <span class="nav-text">str.charCodeAt( index )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-concat-arg1，arg2…"><span class="nav-number">1.1.3.</span> <span class="nav-text">*str.concat( arg1，arg2… )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-indexOf-value，fromindex"><span class="nav-number">1.1.4.</span> <span class="nav-text">*str.indexOf( value，fromindex )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-lastIndexOf-value，fromindex"><span class="nav-number">1.1.5.</span> <span class="nav-text">str.lastIndexOf( value，fromindex )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-match-regexp-g"><span class="nav-number">1.1.6.</span> <span class="nav-text">str.match( /regexp/g )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-replace-tarstr，replacestr"><span class="nav-number">1.1.7.</span> <span class="nav-text">*str.replace( tarstr，replacestr )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-search-tarstr"><span class="nav-number">1.1.8.</span> <span class="nav-text">*str.search( tarstr )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-slice-start，end"><span class="nav-number">1.1.9.</span> <span class="nav-text">*str.slice( start，end )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-split-arg，howmany"><span class="nav-number">1.1.10.</span> <span class="nav-text">*str.split( arg，howmany )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-trim"><span class="nav-number">1.1.11.</span> <span class="nav-text">*str.trim()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-to-Local-LowerCase"><span class="nav-number">1.1.12.</span> <span class="nav-text">*str.to(Local)LowerCase()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-to-Local-UpperCase"><span class="nav-number">1.1.13.</span> <span class="nav-text">*str.to(Local)UpperCase()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不常用"><span class="nav-number">1.2.</span> <span class="nav-text">不常用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#str-anchor-arg"><span class="nav-number">1.2.1.</span> <span class="nav-text">str.anchor( arg )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-link-arg"><span class="nav-number">1.2.2.</span> <span class="nav-text">str.link( arg )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-big"><span class="nav-number">1.2.3.</span> <span class="nav-text">str.big()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-blink"><span class="nav-number">1.2.4.</span> <span class="nav-text">str.blink()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-bold"><span class="nav-number">1.2.5.</span> <span class="nav-text">str.bold()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-fixed"><span class="nav-number">1.2.6.</span> <span class="nav-text">str.fixed()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-fontcolor-color"><span class="nav-number">1.2.7.</span> <span class="nav-text">str.fontcolor( color )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-fontsize-size"><span class="nav-number">1.2.8.</span> <span class="nav-text">str.fontsize( size )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-italics"><span class="nav-number">1.2.9.</span> <span class="nav-text">str.italics()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-fromCharCode-num1-num2…"><span class="nav-number">1.2.10.</span> <span class="nav-text">String.fromCharCode( num1,num2… )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-small"><span class="nav-number">1.2.11.</span> <span class="nav-text">str.small()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-strike"><span class="nav-number">1.2.12.</span> <span class="nav-text">str.strike()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-sub"><span class="nav-number">1.2.13.</span> <span class="nav-text">str.sub()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-sup"><span class="nav-number">1.2.14.</span> <span class="nav-text">str.sup()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array对象内置方法"><span class="nav-number">2.</span> <span class="nav-text">Array对象内置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用-1"><span class="nav-number">2.1.</span> <span class="nav-text">常用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-unshift-ele1-ele2…"><span class="nav-number">2.1.1.</span> <span class="nav-text">arr.unshift( ele1,ele2… )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-push-ele1-ele2…"><span class="nav-number">2.1.2.</span> <span class="nav-text">arr.push( ele1,ele2… )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-concat-arr1-arr2…"><span class="nav-number">2.1.3.</span> <span class="nav-text">arr.concat( arr1,arr2… )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-join-…"><span class="nav-number">2.1.4.</span> <span class="nav-text">arr.join( … )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-shift"><span class="nav-number">2.1.5.</span> <span class="nav-text">arr.shift(  )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-pop"><span class="nav-number">2.1.6.</span> <span class="nav-text">arr.pop(  )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-slice-start-end"><span class="nav-number">2.1.7.</span> <span class="nav-text">arr.slice( start,end )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-splice-index-howmany-ele…"><span class="nav-number">2.1.8.</span> <span class="nav-text">arr.splice( index,howmany,ele… )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-sort"><span class="nav-number">2.1.9.</span> <span class="nav-text">arr.sort(  )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-reverse"><span class="nav-number">2.1.10.</span> <span class="nav-text">arr.reverse(  )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-toString"><span class="nav-number">2.1.11.</span> <span class="nav-text">arr.toString( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arr-indexOf-ele"><span class="nav-number">2.1.12.</span> <span class="nav-text">arr.indexOf( ele )</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TinyMark</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
